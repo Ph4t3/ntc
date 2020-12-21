@@ -6,6 +6,7 @@
         "react": "^16.8.0",
         "react-awesome-button": "^6.5.1",
         "react-dom": "^16.8.0",
+        "react-router-dom": "^5.2.0",
         "react-scripts": "latest",
         "semantic-ui-css": "^2.4.1",
         "semantic-ui-react": "2.0.1"

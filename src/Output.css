@@ -1,5 +1,6 @@
 .Container {
-    background-color: #707a84 !important;
+    background-color: transparent !important;
+    border: 2px solid #475472 !important;
     margin: 10px;
     padding: 10px;
 }

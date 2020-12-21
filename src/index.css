@@ -10,6 +10,12 @@ body * {
     color: #d4d9e4;
 }
 
+input {
+    background-color: transparent !important;
+    border: 2px solid #475472 !important;
+    color: #d4d9e4 !important;
+}
+
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
         monospace;
