@@ -11,7 +11,7 @@ function BinToInt({ setOutput, setHeading }) {
     };
 
     const { inputs, handleInputChange } = useForm(submit, {
-        a: null,
+        a: undefined,
     });
 
     return (

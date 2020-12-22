@@ -23,10 +23,6 @@ function App() {
     const [heading, setHeading] = useState("");
     const [output, setOutput] = useState("");
 
-    useEffect(() => {
-        setOutput("");
-    }, [window.location.pathname]);
-
     return (
         <Router>
             <div className="App">
@@ -40,6 +36,7 @@ function App() {
                     }}
                 >
                     <VerticalSidebar
+                        setOutput={setOutput}
                         setVisible={setVisible}
                         visible={visible}
                     />
