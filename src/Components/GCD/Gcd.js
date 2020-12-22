@@ -3,20 +3,23 @@ import { Form } from "semantic-ui-react";
 import { AwesomeButton } from "react-awesome-button";
 import useForm from "../../Hooks/Form";
 
-function AddInv({ setOutput, setHeading }) {
-    setHeading("Additive Inverse");
+function GCD({ setOutput, setHeading }) {
+    setHeading("GCD - Euclid's Theorem");
     const submit = () => {
         if (inputs.a && inputs.b) {
-            const val = inputs.b - inputs.a;
-            setOutput(
-                "The additive inverse of " +
-                    inputs.a +
-                    " in modulo " +
-                    inputs.b +
-                    " is " +
-                    val
-            );
+            const val = gcd(inputs.a, inputs.b);
+            setOutput(val);
         }
+    };
+
+    const gcd = (a, b) => {
+        if (a < b) return gcd(b, a);
+        if (b === 1) return "GCD is 1";
+        if (b === 0) return "GCD is " + a;
+        const mod = a % b;
+        return (
+            "a = " + a + ", b = " + b + ", a%b = " + mod + "\n" + gcd(b, mod)
+        );
     };
 
     const { inputs, handleInputChange } = useForm(submit, {
@@ -29,14 +32,14 @@ function AddInv({ setOutput, setHeading }) {
             <Form>
                 <Form.Group>
                     <Form.Input
-                        placeholder="Integer"
+                        placeholder="a"
                         name="a"
                         type="number"
                         value={inputs.a}
                         onChange={handleInputChange}
                     />
                     <Form.Input
-                        placeholder="Modulo"
+                        placeholder="b"
                         name="b"
                         type="number"
                         value={inputs.b}
@@ -49,4 +52,4 @@ function AddInv({ setOutput, setHeading }) {
     );
 }
 
-export default AddInv;
+export default GCD;

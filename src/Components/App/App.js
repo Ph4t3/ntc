@@ -2,20 +2,21 @@ import "./App.css";
 import React, { useState } from "react";
 import { AwesomeButton } from "react-awesome-button";
 import { Segment, Sidebar } from "semantic-ui-react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Redirect,
+} from "react-router-dom";
 import VerticalSidebar from "../../Helpers/Sidebar/VerticalSidebar";
 import Output from "../../Helpers/Output/Output";
 import AddInv from "../AddInv/AddInv";
+import GCD from "../GCD/Gcd";
 
 function App() {
     const [visible, setVisible] = useState(false);
-    const [heading, setHeading] = useState("Additive Inverse");
+    const [heading, setHeading] = useState("");
     const [output, setOutput] = useState("");
-
-    const changeComponent = (value) => {
-        setHeading(value);
-        setVisible(false);
-    };
 
     return (
         <Router>
@@ -30,7 +31,7 @@ function App() {
                     }}
                 >
                     <VerticalSidebar
-                        changeComponent={changeComponent}
+                        setVisible={setVisible}
                         visible={visible}
                     />
 
@@ -43,11 +44,20 @@ function App() {
                         </Segment>
                         <div style={{ margin: "20px" }}>
                             <Switch>
-                                <Route path="/">
-                                    <AddInv setOutput={setOutput} />
-                                </Route>
                                 <Route path="/additive-inverse">
-                                    <AddInv setOutput={setOutput} />
+                                    <AddInv
+                                        setOutput={setOutput}
+                                        setHeading={setHeading}
+                                    />
+                                </Route>
+                                <Route path="/gcd">
+                                    <GCD
+                                        setOutput={setOutput}
+                                        setHeading={setHeading}
+                                    />
+                                </Route>
+                                <Route path="/">
+                                    <Redirect to="/additive-inverse" />
                                 </Route>
                             </Switch>
                             <Output output={output} />
