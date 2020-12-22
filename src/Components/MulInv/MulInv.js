@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Form } from "semantic-ui-react";
 import { AwesomeButton } from "react-awesome-button";
 import useForm from "../../Hooks/Form";
@@ -22,7 +22,7 @@ function MulInv({ setOutput, setHeading }) {
     const findInv = (a, b) => {
         var val = "n = " + a + ", b = " + b + "\n";
         var count = 1;
-        var r1, r2, t1, t2, s1, s2;
+        var r1, r2, t1, t2;
         r1 = a;
         r2 = b;
         t2 = 1;
