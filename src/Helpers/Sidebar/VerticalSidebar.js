@@ -24,6 +24,12 @@ const VerticalSidebar = ({ visible, setVisible }) => (
                 GCD - Euclid's Theorem
             </Menu.Item>
         </Link>
+        <Link to="/multiplicative-inverse" onClick={() => setVisible(false)}>
+            <Menu.Item as="a">
+                <Icon name="hand point right" />
+                Multiplicative Inverse
+            </Menu.Item>
+        </Link>
     </Sidebar>
 );
 

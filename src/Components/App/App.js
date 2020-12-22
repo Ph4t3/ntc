@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { AwesomeButton } from "react-awesome-button";
 import { Segment, Sidebar } from "semantic-ui-react";
 import {
@@ -12,11 +12,16 @@ import VerticalSidebar from "../../Helpers/Sidebar/VerticalSidebar";
 import Output from "../../Helpers/Output/Output";
 import AddInv from "../AddInv/AddInv";
 import GCD from "../GCD/Gcd";
+import MulInv from "../MulInv/MulInv";
 
 function App() {
     const [visible, setVisible] = useState(false);
     const [heading, setHeading] = useState("");
     const [output, setOutput] = useState("");
+
+    useEffect(() => {
+        setOutput("");
+    }, [window.location.pathname]);
 
     return (
         <Router>
@@ -25,7 +30,7 @@ function App() {
                     as={Segment}
                     style={{
                         borderRadius: "0",
-                        height: "100vh",
+                        minHeight: "100vh",
                         backgroundColor: "#282c34",
                         overflow: "hidden",
                     }}
@@ -52,6 +57,12 @@ function App() {
                                 </Route>
                                 <Route path="/gcd">
                                     <GCD
+                                        setOutput={setOutput}
+                                        setHeading={setHeading}
+                                    />
+                                </Route>
+                                <Route path="/multiplicative-inverse">
+                                    <MulInv
                                         setOutput={setOutput}
                                         setHeading={setHeading}
                                     />
