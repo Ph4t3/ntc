@@ -13,6 +13,10 @@ import Output from "../../Helpers/Output/Output";
 import AddInv from "../AddInv/AddInv";
 import GCD from "../GCD/Gcd";
 import MulInv from "../MulInv/MulInv";
+import InitialPerm from "../DES/InitialPerm";
+import FinalPerm from "../DES/FinalPerm";
+import BinToInt from "../MathTools/BinToInt";
+import IntToBin from "../MathTools/IntToBin";
 
 function App() {
     const [visible, setVisible] = useState(false);
@@ -40,7 +44,7 @@ function App() {
                         visible={visible}
                     />
 
-                    <Sidebar.Pusher>
+                    <Sidebar.Pusher style={{ minHeight: "100vh" }}>
                         <Segment basic className="App-header">
                             <AwesomeButton onPress={() => setVisible(!visible)}>
                                 Sidebar
@@ -63,6 +67,30 @@ function App() {
                                 </Route>
                                 <Route path="/multiplicative-inverse">
                                     <MulInv
+                                        setOutput={setOutput}
+                                        setHeading={setHeading}
+                                    />
+                                </Route>
+                                <Route path="/bin2int">
+                                    <BinToInt
+                                        setOutput={setOutput}
+                                        setHeading={setHeading}
+                                    />
+                                </Route>
+                                <Route path="/int2bin">
+                                    <IntToBin
+                                        setOutput={setOutput}
+                                        setHeading={setHeading}
+                                    />
+                                </Route>
+                                <Route path="/des/initial">
+                                    <InitialPerm
+                                        setOutput={setOutput}
+                                        setHeading={setHeading}
+                                    />
+                                </Route>
+                                <Route path="/des/final">
+                                    <FinalPerm
                                         setOutput={setOutput}
                                         setHeading={setHeading}
                                     />
