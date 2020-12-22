@@ -18,6 +18,7 @@ import FinalPerm from "../DES/FinalPerm";
 import BinToInt from "../MathTools/BinToInt";
 import IntToBin from "../MathTools/IntToBin";
 import RoundKey from "../DES/RoundKey";
+import FastExp from "../RSA/FastExp";
 
 function App() {
     const [visible, setVisible] = useState(false);
@@ -95,6 +96,12 @@ function App() {
                                 </Route>
                                 <Route path="/des/roundkey">
                                     <RoundKey
+                                        setOutput={setOutput}
+                                        setHeading={setHeading}
+                                    />
+                                </Route>
+                                <Route path="/rsa/fastexp">
+                                    <FastExp
                                         setOutput={setOutput}
                                         setHeading={setHeading}
                                     />
