@@ -19,6 +19,8 @@ import BinToInt from "../MathTools/BinToInt";
 import IntToBin from "../MathTools/IntToBin";
 import RoundKey from "../DES/RoundKey";
 import FastExp from "../RSA/FastExp";
+import Exp from "../MathTools/Exponentiation";
+import XOR from "../MathTools/XOR";
 
 function App() {
     const [visible, setVisible] = useState(false);
@@ -102,6 +104,18 @@ function App() {
                                 </Route>
                                 <Route path="/rsa/fastexp">
                                     <FastExp
+                                        setOutput={setOutput}
+                                        setHeading={setHeading}
+                                    />
+                                </Route>
+                                <Route path="/xor">
+                                    <XOR
+                                        setOutput={setOutput}
+                                        setHeading={setHeading}
+                                    />
+                                </Route>
+                                <Route path="/exponentiation">
+                                    <Exp
                                         setOutput={setOutput}
                                         setHeading={setHeading}
                                     />

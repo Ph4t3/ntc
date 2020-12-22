@@ -26,6 +26,14 @@ const items = [
                 path: "/int2bin",
                 title: "Integer To Binary",
             },
+            {
+                path: "/xor",
+                title: "XOR",
+            },
+            {
+                path: "/exponentiation",
+                title: "Exponentiation",
+            },
         ],
     },
     {
