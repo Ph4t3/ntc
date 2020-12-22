@@ -7,7 +7,7 @@ import { initialPermBox } from "./config";
 function InitialPerm({ setOutput, setHeading }) {
     setHeading("DES - Initial Permutation");
     const submit = () => {
-        if (inputs.a.length === 64) {
+        if (inputs.a && inputs.a.length === 64) {
             var val = "";
             initialPermBox.map(i => {
                 val += inputs.a[i-1];

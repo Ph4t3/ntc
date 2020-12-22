@@ -7,7 +7,7 @@ import { finalPermBox } from "./config";
 function FinalPerm({ setOutput, setHeading }) {
     setHeading("DES - Final Permutation");
     const submit = () => {
-        if (inputs.a.length === 64) {
+        if (inputs.a && inputs.a.length === 64) {
             var val = "";
             finalPermBox.map(i => {
                 val += inputs.a[i-1];

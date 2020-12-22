@@ -16,6 +16,10 @@ input {
     color: #d4d9e4 !important;
 }
 
+.blackText * {
+    color: black;
+}
+
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
         monospace;
