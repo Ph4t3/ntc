@@ -1,6 +1,55 @@
 import React from "react";
 import { Icon, Menu, Sidebar } from "semantic-ui-react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+
+const items = [
+    {
+        heading: "Math Tools",
+        items: [
+            {
+                path: "/additive-inverse",
+                title: "Additive Inverse",
+            },
+            {
+                path: "/gcd",
+                title: "GCD - Euclid's Theorem",
+            },
+            {
+                path: "/multiplicative-inverse",
+                title: "Multiplicative Inverse",
+            },
+            {
+                path: "/bin2int",
+                title: "Binary To Integer",
+            },
+            {
+                path: "/int2bin",
+                title: "Integer To Binary",
+            },
+        ],
+    },
+    {
+        heading: "DES",
+        items: [
+            {
+                path: "/des/initial",
+                title: "Initial Permutation",
+            },
+            {
+                path: "/des/final",
+                title: "Final Permutation",
+            },
+            {
+                path: "/des/roundkey",
+                title: "Round Key",
+            },
+            {
+                path: "/",
+                title: "Encrypted Round Value",
+            },
+        ],
+    },
+];
 
 const VerticalSidebar = ({ visible, setOutput, setVisible }) => {
     let history = useHistory();
@@ -17,105 +66,25 @@ const VerticalSidebar = ({ visible, setOutput, setVisible }) => {
                 borderRight: "2px solid #475472",
             }}
         >
-            <Menu.Item>
-                Math Tools
-                <Menu.Menu>
-                    <Menu.Item
-                        onClick={() => {
-                            setVisible(false);
-                            history.push("/additive-inverse");
-                        }}
-                    >
-                        <Icon name="hand point right" />
-                        Additive Inverse
-                    </Menu.Item>
-                    <Menu.Item
-                        onClick={() => {
-                            setVisible(false);
-                            setOutput("");
-                            history.push("/gcd");
-                        }}
-                    >
-                        <Icon name="hand point right" />
-                        GCD - Euclid's Theorem
-                    </Menu.Item>
-                    <Menu.Item
-                        onClick={() => {
-                            setVisible(false);
-                            setOutput("");
-                            history.push("/multiplicative-inverse");
-                        }}
-                    >
-                        <Icon name="hand point right" />
-                        Multiplicative Inverse
-                    </Menu.Item>
-                    <Menu.Item
-                        onClick={() => {
-                            setVisible(false);
-                            setOutput("");
-                            history.push("/bin2int");
-                        }}
-                    >
-                        <Icon name="hand point right" />
-                        Binary To Integer
-                    </Menu.Item>
-                    <Menu.Item
-                        onClick={() => {
-                            setVisible(false);
-                            setOutput("");
-                            history.push("/int2bin");
-                        }}
-                    >
-                        <Icon name="hand point right" />
-                        Integer To Binary
-                    </Menu.Item>
-                </Menu.Menu>
-            </Menu.Item>
-            <Menu.Item>
-                DES
-                <Menu.Menu>
-                    <Menu.Item
-                        onClick={() => {
-                            setVisible(false);
-                            setOutput("");
-                            history.push("/des/initial");
-                        }}
-                    >
-                        <Icon name="hand point right" />
-                        Initial Permutation
-                    </Menu.Item>
-                    <Menu.Item
-                        onClick={() => {
-                            setVisible(false);
-                            setOutput("");
-                            history.push("/des/final");
-                        }}
-                    >
-                        <Icon name="hand point right" />
-                        Final Permutation
-                    </Menu.Item>
-                    <Menu.Item
-                        onClick={() => {
-                            setVisible(false);
-                            setOutput("");
-                            history.push("/additive-inverse");
-                        }}
-                    >
-                        <Icon name="hand point right" />
-                        Round Key Generator
-                    </Menu.Item>
-                    <Menu.Item
-                        onClick={() => {
-                            setVisible(false);
-                            setOutput("");
-                            history.push("/additive-inverse");
-                        }}
-                    >
-                        <Icon name="hand point right" />
-                        Encrypted Round Value
-                    </Menu.Item>
-                </Menu.Menu>
-            </Menu.Item>
+            {items.map((item) => (
+                <Menu.Item>
+                    {item.heading}
+                    <Menu.Menu>
+                        {item.items.map((innerItem) => (
+                            <Menu.Item
+                                onClick={() => {
+                                    setVisible(false);
+                                    setOutput("");
+                                    history.push(innerItem.path);
+                                }}
+                            >
+                                <Icon name="hand point right" />
+                                {innerItem.title}
+                            </Menu.Item>
+                        ))}
+                    </Menu.Menu>
+                </Menu.Item>
+            ))}
         </Sidebar>
     );
 };

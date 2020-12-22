@@ -17,6 +17,7 @@ import InitialPerm from "../DES/InitialPerm";
 import FinalPerm from "../DES/FinalPerm";
 import BinToInt from "../MathTools/BinToInt";
 import IntToBin from "../MathTools/IntToBin";
+import RoundKey from "../DES/RoundKey";
 
 function App() {
     const [visible, setVisible] = useState(false);
@@ -88,6 +89,12 @@ function App() {
                                 </Route>
                                 <Route path="/des/final">
                                     <FinalPerm
+                                        setOutput={setOutput}
+                                        setHeading={setHeading}
+                                    />
+                                </Route>
+                                <Route path="/des/roundkey">
+                                    <RoundKey
                                         setOutput={setOutput}
                                         setHeading={setHeading}
                                     />
