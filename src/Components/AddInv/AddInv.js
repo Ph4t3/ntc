@@ -1,7 +1,7 @@
 import React from "react";
 import { Form } from "semantic-ui-react";
 import { AwesomeButton } from "react-awesome-button";
-import useForm from "./Hooks/Form";
+import useForm from "../../Hooks/Form";
 
 function AddInv({ setOutput }) {
     const submit = () => {

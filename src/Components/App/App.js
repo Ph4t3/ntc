@@ -1,11 +1,11 @@
 import "./App.css";
 import React, { useState } from "react";
-import VerticalSidebar from "./VerticalSidebar";
-import Output from "./Output";
-import AddInv from "./AddInv";
 import { AwesomeButton } from "react-awesome-button";
 import { Segment, Sidebar } from "semantic-ui-react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import VerticalSidebar from "../../Helpers/Sidebar/VerticalSidebar";
+import Output from "../../Helpers/Output/Output";
+import AddInv from "../AddInv/AddInv";
 
 function App() {
     const [visible, setVisible] = useState(false);
