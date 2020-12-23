@@ -21,6 +21,7 @@ import RoundKey from "../DES/RoundKey";
 import FastExp from "../RSA/FastExp";
 import Exp from "../MathTools/Exponentiation";
 import XOR from "../MathTools/XOR";
+import Mixer from "../DES/mixer";
 
 function App() {
     const [visible, setVisible] = useState(false);
@@ -116,6 +117,12 @@ function App() {
                                 </Route>
                                 <Route path="/exponentiation">
                                     <Exp
+                                        setOutput={setOutput}
+                                        setHeading={setHeading}
+                                    />
+                                </Route>
+                                <Route path="/des/mixer">
+                                    <Mixer
                                         setOutput={setOutput}
                                         setHeading={setHeading}
                                     />

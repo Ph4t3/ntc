@@ -26,7 +26,7 @@ function XOR({ setOutput, setHeading }) {
                 <Form.Group widths="equal">
                     <Form.Input
                         fluid
-                        placeholder="a"
+                        placeholder="a (binary)"
                         name="a"
                         type="number"
                         value={inputs.a}
@@ -34,7 +34,7 @@ function XOR({ setOutput, setHeading }) {
                     />
                     <Form.Input
                         fluid
-                        placeholder="b"
+                        placeholder="b (binary)"
                         name="b"
                         type="number"
                         value={inputs.b}

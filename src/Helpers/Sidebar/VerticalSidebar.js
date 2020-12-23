@@ -51,10 +51,10 @@ const items = [
                 path: "/des/roundkey",
                 title: "Round Key",
             },
-            /*            {
-                path: "/",
-                title: "Encrypted Round Value",
-            },*/
+            {
+                path: "/des/mixer",
+                title: "Mixer Function",
+            },
         ],
     },
     {
